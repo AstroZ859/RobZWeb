@@ -118,20 +118,19 @@
     
     <script>
         const menuLinks = document.querySelectorAll('.menu a');
-    
-        function setActiveLink() {
-            const hash = window.location.hash || '#inicio';
-
+        const sections = document.querySelectorAll('section');
+        
+        function setActiveLink(id) {
             menuLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === hash) {
+            if (link.getAttribute('href') === ) {
                     link.classList.add('active');
                 }
             });
         }
-    
+        
         window.addEventListener('load', setActiveLink);
-    
+        
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuLinks.forEach(l => l.classList.remove('active'));
