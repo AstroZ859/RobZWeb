@@ -125,6 +125,10 @@
         const sections = document.querySelectorAll('section');
 
         const offset = 120 // section offset
+
+        function changeURL() {
+            history.replaceState(null, '', window.location.pathName);
+        }
         
         function setActiveLink(id) {
             menuLinks.forEach(link => {
@@ -151,6 +155,7 @@
 
             if (current) {
                 setActiveLink(current);
+                changeURL();
             }
         });
         
@@ -167,6 +172,7 @@
                 });
 
                 setActiveLink(targetId);
+                changeURL();
             });
         });
 
