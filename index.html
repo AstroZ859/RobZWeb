@@ -130,7 +130,22 @@
         }
         
         window.addEventListener('load', () => {
-            setActiveLink('#inicio')
+            setActiveLink('inicio');
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            if (current) {
+                setActiveLink(current);
+            }
         });
         
         menuLinks.forEach(link => {
@@ -139,6 +154,8 @@
                 link.classList.add('active');
             });
         });
+
+        console.log('RobZWeb cargado');
     </script>
 </body>
 </html>
