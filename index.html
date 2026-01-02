@@ -119,6 +119,8 @@
     <script>
         const menuLinks = document.querySelectorAll('.menu a');
         const sections = document.querySelectorAll('section');
+
+        const offset = 120 // section offset
         
         function setActiveLink(id) {
             menuLinks.forEach(link => {
@@ -137,7 +139,7 @@
             let current = '';
 
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
+                const sectionTop = section.offsetTop - offset;
                 if (scrollY >= sectionTop) {
                     current = section.getAttribute('id');
                 }
@@ -149,9 +151,18 @@
         });
         
         menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+            link.addEventListener('click', e => {
+                e.preventDefualt() // I'll make a custom scroll
+                
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+
+                setActiveLink(targetId);
             });
         });
 
