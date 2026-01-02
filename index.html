@@ -123,13 +123,15 @@
         function setActiveLink(id) {
             menuLinks.forEach(link => {
                 link.classList.remove('active');
-            if (link.getAttribute('href') === ) {
+            if (link.getAttribute('href') === `#${id}`) {
                     link.classList.add('active');
                 }
             });
         }
         
-        window.addEventListener('load', setActiveLink);
+        window.addEventListener('load', () => {
+            setActiveLink('#inicio')
+        });
         
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
