@@ -124,7 +124,8 @@
         const menuLinks = document.querySelectorAll('.menu a');
         const sections = document.querySelectorAll('section');
 
-        const offset = 120 // section offset
+        const offset = 120; // section offset
+        let isClickScrolling = false;
         
         function setActiveLink(id) {
             menuLinks.forEach(link => {
@@ -140,6 +141,8 @@
         });
 
         window.addEventListener('scroll', () => {
+            if (isClickScrolling) return;
+
             let current = '';
 
             sections.forEach(section => {
@@ -162,6 +165,7 @@
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
 
+                isClickScrolling = true;
                 window.scrollTo({
                     top: targetSection.offsetTop - offset,
                     behavior: 'smooth'
@@ -169,6 +173,10 @@
 
                 setActiveLink(targetId);
                 // history.replaceState(null, '', window.location.pathname);
+
+                setTimeOut(() => {
+                    isClickScrolling = false;
+                }, 600);
             });
         });
 
