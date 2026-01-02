@@ -1,6 +1,14 @@
 body {
     background: #0f0f0f;
     color: white;
-    font-family: Arial;
+    font-family: 'Montserrat';
     text-align: center;
+}
+
+h1 {
+    font-weight: 900
+}
+
+p {
+    font-weight: 700
 }
