@@ -144,7 +144,7 @@
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - offset;
-                if (scrollY >= sectionTop) {
+                if (window.scrollY >= sectionTop) {
                     current = section.getAttribute('id');
                 }
             });
@@ -157,7 +157,7 @@
         
         menuLinks.forEach(link => {
             link.addEventListener('click', e => {
-                e.preventDefualt(); // I'll make a custom scroll
+                e.preventDefault(); // I'll make a custom scroll
                 
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
@@ -168,7 +168,7 @@
                 });
 
                 setActiveLink(targetId);
-                history.replaceState(null, '', window.location.pathName);
+                // history.replaceState(null, '', window.location.pathname);
             });
         });
 
