@@ -118,7 +118,7 @@
     
     <script>
         const menuLinks = document.querySelectorAll('.menu a');
-
+    
         function setActiveLink() {
             const hash = window.location.hash || '#inicio';
 
@@ -129,9 +129,9 @@
                 }
             });
         }
-
+    
         window.addEventListener('load', setActiveLink);
-
+    
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuLinks.forEach(l => l.classList.remove('active'));
