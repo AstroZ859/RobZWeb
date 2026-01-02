@@ -156,7 +156,7 @@
         
         menuLinks.forEach(link => {
             link.addEventListener('click', e => {
-                e.preventDefualt() // I'll make a custom scroll
+                e.preventDefualt(); // I'll make a custom scroll
                 
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
