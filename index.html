@@ -60,6 +60,10 @@
             color: #00aaff;
         }
 
+        section {
+            padding: 80px 20px;
+        }
+
         /* Adaptarlo a vertical */
         @media (max-width: 768px) {
             .topbar {
@@ -85,16 +89,28 @@
     <div class="topbar">
         <div class="logo">RobZWeb</div>
         <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobremi">Sobre mí</a></li>
         </ul>
     </div>
 
     <!-- EXTRA -->
-    <h1>Bienvenido a RobZWeb</h1>
-    <p>Estoy trabajando en esta pagina aun</p>
+    <section id="inicio">
+        <h1>Bienvenido</h1>
+        <p>Esta es la página oficial de RobZ</p>
+    </section>
+
+    <section id="videos">
+        <h1>Videos</h1>
+        <p>Aquí irán mis videos</p>
+    </section>
+
+    <section id="proyectos">
+        <h1>Proyectos</h1>
+        <p>Mis proyectos actuales</p>
+    </section>
 
     <script src="script.js"></script>
 </body>
